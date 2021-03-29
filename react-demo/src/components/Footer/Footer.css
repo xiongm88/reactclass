@@ -1,0 +1,17 @@
+.footer{
+    width: 100%;
+    height: 25vh;
+    margin: none;
+    background-color: rgba(8, 114, 8, 0.75);
+    background-position: bottom;
+    background-size: 100%;
+    text-align: center;
+}
+
+.about{
+    margin: 0, 10px;
+    border: none;
+    padding: none;
+    text-align: center;
+    color: white;
+}

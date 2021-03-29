@@ -6,7 +6,7 @@ import Card2 from '../../components/Card/Card2';
 import Card3 from '../../components/Card/Card3';
 import Card4 from '../../components/Card/Card4';
 import {Grid} from '@material-ui/core';
-import Logo1 from '../../components/Logo/Logo1'
+import Footer from '../../components/Footer/Footer';
 
 function Home(){
     return(
@@ -26,6 +26,7 @@ function Home(){
                     <Card4/>
                 </Grid>
             </Grid>
+            <Footer/>
         </div>
     )
 };
