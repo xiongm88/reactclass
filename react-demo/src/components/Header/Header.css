@@ -1,0 +1,35 @@
+.header{
+    width: 100%;
+    margin: none;
+    text-align: center;
+    background-color: rgba(8, 114, 8, 0.75);
+    background-position: bottom;
+    background-size: 100%;
+}
+
+.head2{
+    font-family: play;
+    font-size: 9vh;
+    color: white;
+    text-align: left;
+    margin-top: 10px;
+}
+.tablink{
+    width: 25vh;
+    background-color: rgba(4, 136, 4, 0);
+    height: 10vh;
+    color: white;
+    font-size: 4vh;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    margin: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.tablink:hover{
+    background-color: white;
+    color: rgba(4, 136, 4);
+}
