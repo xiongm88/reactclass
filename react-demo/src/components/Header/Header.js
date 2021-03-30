@@ -1,23 +1,27 @@
 import React from 'react';
 import './Header.css';
+import Button from '../Button/Button'
+import Grid from '@material-ui/core/Grid';
+
 
 function Header(){
+    const [firstName, setFirstName] = React.useState(['FAN WEAR', 'CLEATS', 'ACCESSORIES', 'TRAINING']);
+
+    const changefirstName = ()=> {
+        setFirstName('About You')
+    }
+
     return(
         <div class="header">
             <h1 class="head2">MKE11EVEN</h1>
 
-            <a href="./Fanwear.html"><button class="tablink" onclick="openCity('Fanwear')"
-                id="defaultOpen">Fanwear</button></a>
-
-            <a href="./Cleats.html"><button class="tablink" onclick="openCity('Cleats', this, 'green')">Cleats</button></a>
-
-            <a href="./Accessories.html"><button class="tablink"
-                onclick="openCity('Accessories', this, 'blue')">Accessories</button></a>
-
-            <a href="./Training."><button class="tablink"
-                onclick="openCity('Training', this, 'orange')">Training</button></a>
-
-            <i id="user" class="far fa-user-circle"></i>
+            <Grid container spacing={0}>
+                {firstName.map(item=>
+                    <div>
+                        <Button buttonName={item}/>
+                    </div>
+                    )}
+            </Grid>
         </div>
     )
 }

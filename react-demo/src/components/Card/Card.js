@@ -1,21 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Ace from '../../pics/acespeed.jpeg';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -41,20 +38,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
 
   return (
     <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            {props.avatar}
           </Avatar>
         }
         action={
@@ -62,19 +55,21 @@ export default function RecipeReviewCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Adidas Ace 16+ Speed Of Light Pack"
-        subheader="September 14, 2016"
+        title={props.title}
+        subheader={props.date}
       />
       <CardMedia
         className={classes.media}
-        image={Ace}
-        title="Paella dish"
+        image={props.image}
+        title={props.imageTitle}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-        <p>Adidas Ace 16+ Speed Of Light Pack</p>
-        <p>FG Soccer Cleat</p>
-        <p>$249.00</p>
+        {props.description1}
+        <br/>
+        {props.description2}
+        <br/>
+        {props.description3}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -84,32 +79,7 @@ export default function RecipeReviewCard() {
         <IconButton aria-label="share">
           <ShareIcon />
         </IconButton>
-        <IconButton
-          className={clsx(classes.expand, {
-            [classes.expandOpen]: expanded,
-          })}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </IconButton>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>
-            <ul>
-              <li>100% Synthetic</li>
-              <li>Rubber sole</li>
-              <li>synthetic-and-leather</li>
-              <li>US Sizes</li>
-              <li>Authentic Adidas Gear Guarantee</li>
-              <li>High performance molded design with cushioning for great in-shoe comfort and fit at all times</li>
-              <li>Ultra Soft Leather for superior comfort and ball feel,with updated pattern details for a dependable performance</li>
-            </ul>
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 }

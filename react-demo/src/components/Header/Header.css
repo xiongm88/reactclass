@@ -12,8 +12,14 @@
     font-size: 9vh;
     color: white;
     text-align: left;
-    margin-top: 10px;
+    margin: 10px;
 }
+
+.button{
+    width: 100%;
+    text-align: center;
+}
+
 .tablink{
     width: 25vh;
     background-color: rgba(4, 136, 4, 0);
@@ -33,3 +39,4 @@
     background-color: white;
     color: rgba(4, 136, 4);
 }
+
