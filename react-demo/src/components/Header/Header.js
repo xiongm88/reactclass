@@ -5,18 +5,19 @@ import Grid from '@material-ui/core/Grid';
 
 
 function Header(){
-    const [firstName, setFirstName] = React.useState(['FAN WEAR', 'CLEATS', 'ACCESSORIES', 'TRAINING']);
+    const [firstNames, setFirstNames] = React.useState(['FAN WEAR', 'CLEATS', 'ACCESSORIES', 'TRAINING']);
+    const [currentUser, setCurrentUser] = React.useState('MKE11EVEN');
 
     const changefirstName = ()=> {
-        setFirstName('About You')
+        setFirstNames('About You')
     }
 
     return(
         <div class="header">
-            <h1 class="head2">MKE11EVEN</h1>
+            <h1 class="head2">{currentUser}</h1>
 
             <Grid container spacing={0}>
-                {firstName.map(item=>
+                {firstNames.map(item=>
                     <div>
                         <Button buttonName={item}/>
                     </div>
